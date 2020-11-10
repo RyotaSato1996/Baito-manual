@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+<head>
+  <meta charset="utf-8">
+  <title>バイト</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <!-- Font Awesomeのアイコンフォント -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+  <!-- 自サイトのCSS -->
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  
+  <!-- ホーム画面 -->
+  <section id="home" class="view">
+    
+    <!-- ヘッダー -->
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-light">
+        <a href="#" class="navbar-brand">みんなで作る<br>バイトマニュアル</a>
+        <button href="#add-manual-modal" data-toggle="modal" type="button" class="btn-outline-success">マニュアルを登録する</button>
+        <button type="button" class="btn-outline-info logout-button">ログアウト</button>
+        
+      </nav>
+    </header>
+    <!-- /ヘッダー -->
+
+    <!-- マニュアル -->
+    <div class="tabbable">
+      <div class="row">
+        
+        <!-- マニュアルタブ -->
+        <ul class="nav flex-column col-2">
+          <li class="nav-item">
+            <a href="#stove-manual" class="nav-link" data-toggle="tab">ストーブ</a>
+            </li>
+            <li class="nav-item">
+              <a href="#fry-manual" class="nav-link" data-toggle="tab" >揚げ場</a>
+            </li>
+            <li class="nav-item">
+              <a href="#bake-manual" class="nav-link" data-toggle="tab">焼き場</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sashi-manual" class="nav-link" data-toggle="tab">刺し場</a>
+            </li>
+            <li class="nav-item">
+              <a href="#salad-manual" class="nav-link" data-toggle="tab">サラダ場</a>
+            </li>
+            <li class="nav-item">
+              <a href="#shikomi-manual" class="nav-link" data-toggle="tab">仕込み</a>
+            </li>
+          </ul>
+          <!-- /マニュアルタブ -->
+          
+          <div class="tab-content col-9">
+            <div id="stove-manual" class="tab-pane mt-3 active">
+              <h3>ストーブ</h3>
+              <div class="accordion" id="stove-list">
+              </div>
+            </div>
+            <div id="fry-manual" class="tab-pane mt-3">
+              <h3>揚げ場</h3>
+              <div class="accordion" id="fry-list">
+              </div>
+            </div>
+            <div id="bake-manual" class="tab-pane mt-3">
+              <h3>焼き場</h3>
+              <div class="accordion" id="bake-list">
+              </div>
+            </div>
+            <div id="sashi-manual" class="tab-pane mt-3">
+              <h3>刺し場</h3>
+              <div class="accordion" id="sashi-list">
+              </div>
+            </div>
+            <div id="salad-manual" class="tab-pane mt-3">
+              <h3>サラダ・デザート</h3>
+              <div class="accordion" id="salad-list">
+              </div>
+            </div>
+            <div id="shikomi-manual" class="tab-pane mt-3">
+              <h3>仕込み</h3>
+              <div class="accordion" id="shikomi-list">
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+  </section>
+  <!-- / ホーム画面 -->
+  
+  <!-- マニュアルテンプレート -->
+  <div id="manual-template">
+    <div class="manual-item">
+      <section>
+        <div class="accordion-title"><a href="#" class="recipe-title"></a></div>
+        <div class="accordion-content">
+          <div class="row">
+            <div class="recipe_image col-sm-3 m-4">
+              <img class="recipe-item__image" alt="">
+            </div>
+            <div class="recipe_body col-sm-8 ml-2">
+              <div class="recipe_material mt-3">
+                <h4 class="material border-bottom">
+                  材料
+                </h4>
+                <div class="material-content"></div>
+              </div>
+              <div class="recipe_content mt-3">
+                <h4 class="recipe_howto border-bottom">
+                  作り方
+                </h4>
+                <div class="recipe_text"></div>
+              </div>
+              <div class="recipe_info mt-1">
+                <button class="btn btn-danger manual-item__delete">
+                  <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                  削除
+                </button>
+              </div>
+            </div>    
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- マニュアルテンプレート -->
+        
+        
+  <!-- ログイン画面 -->
+  <section id="login" class="view">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-10 col-md-8 col-lg-6">
+          
+          <form id="login-form">
+            
+            <div class="form-group login__email">
+              <label for="login-email" class="col-form-label">
+                メールアドレス
+              </label>
+              <div>
+                <input id="login-email" type="email" class="form-control" required>
+              </div>
+            </div>
+            
+            <div class="form-group login__password">
+              <label for="login-password" class="col-form-label">
+                パスワード
+              </label>
+              <div>
+                <input id="login-password" type="password" class="form-control" required>
+              </div>
+            </div>
+            
+            <div id="login__help" class="alert alert-danger"></div>
+            
+            <div class="form-group login__submit">
+              <div>
+                <button id="login__submit-button" type="submit" class="btn btn-success">
+                  ログイン
+                </button>
+              </div>
+            </div>
+            
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /#login -->
+  
+  <!-- キッチンマニュアル追加モーダル -->
+  <div id="add-manual-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        
+        <!-- モーダルのヘッダー -->
+        <div class="modal-header">
+          <h4 class="modal-title">マニュアルの登録</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- /モーダルのヘッダー -->
+        
+        <!-- モーダルのコンテンツ -->
+        <div class="modal-body m-1">
+          <form id="manual-form">
+            
+            <div class="form-group row">
+              <label for="add-manual-title" class="col-md-3  col-form-label">タイトル</label>
+              <div class="col-md-9">
+                <input id="add-manual-title" type="text" class="form-control" required>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">材料</label> 
+              <div class="col-sm-9">
+                <textarea id="add-material-content" class="form-cotrol w-100" rows="5" required></textarea>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">作り方</label> 
+              <div class="col-sm-9">
+                <textarea id="add-manual-content" class="form-cotrol w-100" rows="5" required></textarea>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-md-3">参考画像</div>
+              <div class="col-md-9">
+                <div class="custom-file">
+                  <input id="add-manual-image" type="file" accept=".jpg,.jpeg,.png,.gif, image/jpeg,image/png,image/gif" class="custom-file-input" required>
+                  <label id="add-manual-image-label" class="custom-file-label" for="add-manual-image">ファイルを選択</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="custom-select" class="col-sm-3">カテゴリー</label>
+              <select id="custom-select" class="custom-select col-sm-9" name="category">
+                <option>ストーブ</option>
+                <option>揚げ場</option>
+                <option>焼き場</option>
+                <option>刺し場</option>
+                <option>サラダ場</option>
+                <option>仕込み</option>
+              </select>
+            </div>
+            
+            <div id="add-manual__help" class="alert alert-danger"></div>
+            <button id="submit_add_manual" type="submit" class="btn btn-default btn-success btn-block">
+              保存する
+            </button>
+            
+          </form>
+        </div>
+        
+      </div>
+      <!-- /モーダルのコンテンツ -->
+    </div>
+  </div>
+  <!-- / キッチンマニュアル追加モーダル -->
+  
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+  
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCmMFXzCDz90rAEl1YkuJL0fstVE5v1DPw",
+      authDomain: "baito-92fdc.firebaseapp.com",
+      databaseURL: "https://baito-92fdc.firebaseio.com",
+      projectId: 'baito-92fdc',
+      storageBucket: "baito-92fdc.appspot.com",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!-- Popper.js, 次に Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script src="home.js"></script>
+
+</body>
+</html>
